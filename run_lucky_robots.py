@@ -46,7 +46,8 @@ def main():
             session.start(
                 scene=scene_path,
                 robot="unitreego2",
-                task="navigation"
+                task="navigation",
+                game_path=engine_path
             )
             print("Session started successfully!")
             
