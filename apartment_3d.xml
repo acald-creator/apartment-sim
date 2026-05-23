@@ -1,6 +1,6 @@
 <!-- Procedurally generated MuJoCo scene for Apartment Moving Simulator -->
 <mujoco model="apartment_moving_day">
-    <compiler coordinate="local" angle="degree" type="mesh"/>
+    <compiler coordinate="local" angle="degree"/>
     <option gravity="0 0 -9.81" timestep="0.002"/>
     <size njmax="500" nconmax="100"/>
     
