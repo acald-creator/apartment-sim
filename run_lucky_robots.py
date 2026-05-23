@@ -24,13 +24,17 @@ except ImportError:
     print("  uv pip install luckyrobots")
     sys.exit(1)
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
 logger = logging.getLogger("moving_simulator")
+
 
 class MovingAssistantController(Node):
     """Custom control node for our robotic moving assistant"""
-    def __init__(self, name: str = "assistant_controller", robot: str = "stretch_v1"):
-        super().__init__(name)
+
+    def __init__(self, name: str = "assistant_controller", robot: str = "stretch_v1", host: str = "localhost", port: int = 3000):
+        super().__init__(name, namespace="", host=host, port=port)
         self.robot = robot
         self.robot_config = LuckyRobots.get_robot_config(robot)
         self.loop_running = False
@@ -65,18 +69,22 @@ class MovingAssistantController(Node):
         # Simple walk/moving loop (neutral actions)
         limits = self.robot_config["action_space"]["actuator_limits"]
         action_dim = len(limits)
-        logger.info(f"Starting control loop at {rate_hz} Hz (Action dimension: {action_dim})")
+        logger.info(
+            f"Starting control loop at {rate_hz} Hz (Action dimension: {action_dim})"
+        )
 
         step_idx = 0
         try:
             while self.loop_running:
                 # Send neutral actuator commands (0.0 values) to let robot settle
                 actuator_values = np.zeros(action_dim)
-                response = await self.step_client.call(Step.Request(actuator_values=actuator_values))
-                
+                response = await self.step_client.call(
+                    Step.Request(actuator_values=actuator_values)
+                )
+
                 if step_idx % 20 == 0:
                     logger.info(f"Simulated step {step_idx}...")
-                
+
                 step_idx += 1
                 await asyncio.sleep(period)
         except Exception as e:
@@ -88,6 +96,7 @@ class MovingAssistantController(Node):
     def stop_control_loop(self) -> None:
         self.loop_running = False
 
+
 def main():
     scene_path = "apartment_3d.xml"
     if not os.path.exists(scene_path):
@@ -95,12 +104,16 @@ def main():
         sys.exit(1)
 
     # Locate the compiled LuckyEngine binary
-    engine_path = os.environ.get("LUCKYENGINE_PATH") or os.environ.get("LUCKYENGINE_HOME")
+    engine_path = os.environ.get("LUCKYENGINE_PATH") or os.environ.get(
+        "LUCKYENGINE_HOME"
+    )
     if not engine_path:
         print("=====================================================================")
         print("WARNING: 'LUCKYENGINE_PATH' is not set.")
         print("Please point it to your extracted LuckyEngine directory, e.g.:")
-        print("  export LUCKYENGINE_PATH=/home/acald-creator/go/src/github.com/acald-creator/LuckyEngine-2026.1-Linux-x64")
+        print(
+            "  export LUCKYENGINE_PATH=/home/acald-creator/go/src/github.com/acald-creator/LuckyEngine-2026.1-Linux-x64"
+        )
         print("=====================================================================\n")
 
     # We use stretch_v1 (the mobile manipulator robot)
@@ -111,7 +124,11 @@ def main():
         luckyrobots = LuckyRobots()
 
         # 2. Initialize and register our custom controller node
-        controller = MovingAssistantController(robot=robot_model)
+        controller = MovingAssistantController(
+            robot=robot_model,
+            host=luckyrobots.host,
+            port=luckyrobots.port
+        )
         luckyrobots.register_node(controller)
 
         # 3. Start the simulation backend
@@ -120,12 +137,12 @@ def main():
             scene=scene_path,
             robot=robot_model,
             task="navigation",
-            game_path=engine_path
+            game_path=engine_path,
         )
 
         # 4. Wait for client handshake connection
         print("Waiting for LuckyEngine gRPC client connection...")
-        luckyrobots.wait_for_world_client(timeout=15.0)
+        luckyrobots.wait_for_world_client(timeout=45.0)
 
         # 5. Start our controller's background loop
         controller.start_control_loop(rate_hz=10.0)
@@ -138,9 +155,10 @@ def main():
     except Exception as e:
         print(f"\nSimulation process encountered an error: {e}")
     finally:
-        if 'controller' in locals():
+        if "controller" in locals():
             controller.stop_control_loop()
         print("Application exit.")
+
 
 if __name__ == "__main__":
     main()
