@@ -1,0 +1,565 @@
+{
+  "rooms": [
+    {
+      "id": "utility_room",
+      "coordinates": [
+        80,
+        30
+      ],
+      "outline": [
+        76.05,
+        22.8,
+        7.9,
+        14.4
+      ]
+    },
+    {
+      "id": "kitchen",
+      "coordinates": [
+        67,
+        30
+      ],
+      "outline": [
+        58.65,
+        22.45,
+        16.7,
+        15.1
+      ]
+    },
+    {
+      "id": "dining_room",
+      "coordinates": [
+        51,
+        31
+      ],
+      "outline": [
+        43.3,
+        22.5,
+        15.2,
+        17.0
+      ]
+    },
+    {
+      "id": "guest_bath",
+      "coordinates": [
+        39,
+        31
+      ],
+      "outline": [
+        34.7,
+        22.5,
+        8.6,
+        17.0
+      ]
+    },
+    {
+      "id": "bedroom_3_front",
+      "coordinates": [
+        21,
+        34
+      ],
+      "outline": [
+        12.0,
+        22.5,
+        18.0,
+        23.0
+      ]
+    },
+    {
+      "id": "master_bath",
+      "coordinates": [
+        67,
+        51
+      ],
+      "outline": [
+        59.8,
+        44.8,
+        14.4,
+        12.4
+      ]
+    },
+    {
+      "id": "living_room",
+      "coordinates": [
+        50,
+        55
+      ],
+      "outline": [
+        41.25,
+        43.85,
+        17.5,
+        22.3
+      ]
+    },
+    {
+      "id": "bedroom_2_middle",
+      "coordinates": [
+        32,
+        56
+      ],
+      "outline": [
+        23.5,
+        45.5,
+        17.0,
+        21.0
+      ]
+    },
+    {
+      "id": "bedroom_1_master",
+      "coordinates": [
+        70,
+        68
+      ],
+      "outline": [
+        58.45,
+        57.45,
+        23.1,
+        21.1
+      ]
+    },
+    {
+      "id": "entry",
+      "coordinates": [
+        79,
+        41
+      ],
+      "outline": [
+        75.9,
+        37.5,
+        6.0,
+        7.0
+      ]
+    },
+    {
+      "id": "patio",
+      "coordinates": [
+        47,
+        72
+      ],
+      "outline": [
+        40.5,
+        66.5,
+        13.0,
+        11.0
+      ]
+    },
+    {
+      "id": "patio_storage",
+      "coordinates": [
+        56,
+        72
+      ],
+      "outline": [
+        53.5,
+        66.5,
+        5.0,
+        11.0
+      ]
+    },
+    {
+      "id": "bedroom_3_closet",
+      "coordinates": [
+        31,
+        27
+      ],
+      "outline": [
+        27.36,
+        22.25,
+        7.29,
+        9.5
+      ]
+    },
+    {
+      "id": "bedroom_2_closet",
+      "coordinates": [
+        18,
+        51
+      ],
+      "outline": [
+        12.25,
+        45.5,
+        11.5,
+        11.0
+      ]
+    },
+    {
+      "id": "master_closet",
+      "coordinates": [
+        78,
+        51
+      ],
+      "outline": [
+        74.0,
+        44.85,
+        8.0,
+        12.3
+      ]
+    },
+    {
+      "id": "entry_closet",
+      "coordinates": [
+        74,
+        36
+      ],
+      "outline": [
+        71.9,
+        34.2,
+        4.2,
+        3.6
+      ]
+    },
+    {
+      "id": "linen_closet",
+      "coordinates": [
+        33,
+        36
+      ],
+      "outline": [
+        30.9,
+        32.45,
+        4.2,
+        7.1
+      ]
+    }
+  ],
+  "boxes": [
+    {
+      "type": "small",
+      "dimensions_inches": [
+        16,
+        12,
+        12
+      ],
+      "max_weight_lbs": 30
+    },
+    {
+      "type": "medium",
+      "dimensions_inches": [
+        18,
+        18,
+        16
+      ],
+      "max_weight_lbs": 40
+    },
+    {
+      "type": "large",
+      "dimensions_inches": [
+        24,
+        18,
+        18
+      ],
+      "max_weight_lbs": 50
+    },
+    {
+      "type": "wardrobe",
+      "dimensions_inches": [
+        24,
+        24,
+        40
+      ],
+      "max_weight_lbs": 60
+    }
+  ],
+  "inventory": [
+    {
+      "id": "microwave",
+      "current_room": "kitchen",
+      "dimensions_inches": [
+        20,
+        15,
+        12
+      ],
+      "fragile": false,
+      "action": "store",
+      "weight_lbs": 35.0
+    },
+    {
+      "id": "stove",
+      "current_room": "kitchen",
+      "dimensions_inches": [
+        30,
+        26,
+        36
+      ],
+      "fragile": false,
+      "action": "move",
+      "weight_lbs": 150.0
+    },
+    {
+      "id": "dish_rack",
+      "current_room": "kitchen",
+      "dimensions_inches": [
+        15,
+        12,
+        10
+      ],
+      "fragile": false,
+      "action": "move",
+      "weight_lbs": 5.0
+    },
+    {
+      "id": "cookware",
+      "current_room": "kitchen",
+      "dimensions_inches": [
+        18,
+        18,
+        16
+      ],
+      "fragile": true,
+      "action": "move",
+      "weight_lbs": 25.0
+    },
+    {
+      "id": "pantry_items",
+      "current_room": "kitchen",
+      "dimensions_inches": [
+        12,
+        12,
+        12
+      ],
+      "fragile": false,
+      "action": "remove",
+      "weight_lbs": 10.0
+    },
+    {
+      "id": "couch",
+      "current_room": "living_room",
+      "dimensions_inches": [
+        84,
+        36,
+        36
+      ],
+      "fragile": false,
+      "action": "remove",
+      "weight_lbs": 120.0
+    },
+    {
+      "id": "main_smart_tv_65",
+      "current_room": "living_room",
+      "dimensions_inches": [
+        58,
+        4,
+        34
+      ],
+      "fragile": true,
+      "action": "move",
+      "weight_lbs": 50.0
+    },
+    {
+      "id": "second_smart_tv_55",
+      "current_room": "living_room",
+      "dimensions_inches": [
+        49,
+        4,
+        29
+      ],
+      "fragile": true,
+      "action": "move",
+      "weight_lbs": 40.0
+    },
+    {
+      "id": "secondary_tv_stand",
+      "current_room": "living_room",
+      "dimensions_inches": [
+        48,
+        18,
+        20
+      ],
+      "fragile": false,
+      "action": "remove",
+      "weight_lbs": 60.0
+    },
+    {
+      "id": "glass_computer_desk_lr",
+      "current_room": "living_room",
+      "dimensions_inches": [
+        48,
+        24,
+        30
+      ],
+      "fragile": true,
+      "action": "remove",
+      "weight_lbs": 50.0
+    },
+    {
+      "id": "futon_couch",
+      "current_room": "living_room",
+      "dimensions_inches": [
+        70,
+        36,
+        32
+      ],
+      "fragile": false,
+      "action": "move",
+      "weight_lbs": 80.0
+    },
+    {
+      "id": "mattress_queen",
+      "current_room": "bedroom_1_master",
+      "dimensions_inches": [
+        60,
+        80,
+        10
+      ],
+      "fragile": false,
+      "action": "move",
+      "weight_lbs": 80.0
+    },
+    {
+      "id": "glass_computer_desk_master",
+      "current_room": "bedroom_1_master",
+      "dimensions_inches": [
+        40,
+        24,
+        30
+      ],
+      "fragile": true,
+      "action": "remove",
+      "weight_lbs": 40.0
+    },
+    {
+      "id": "lg_monitor",
+      "current_room": "bedroom_1_master",
+      "dimensions_inches": [
+        24,
+        8,
+        18
+      ],
+      "fragile": true,
+      "action": "move",
+      "weight_lbs": 12.0
+    },
+    {
+      "id": "desktop_heavy",
+      "current_room": "bedroom_1_master",
+      "dimensions_inches": [
+        22,
+        10,
+        22
+      ],
+      "fragile": true,
+      "action": "move",
+      "weight_lbs": 30.0
+    },
+    {
+      "id": "desktop_medium",
+      "current_room": "bedroom_1_master",
+      "dimensions_inches": [
+        18,
+        8,
+        18
+      ],
+      "fragile": true,
+      "action": "move",
+      "weight_lbs": 20.0
+    },
+    {
+      "id": "metal_bed_frame_queen",
+      "current_room": "bedroom_1_master",
+      "dimensions_inches": [
+        60,
+        80,
+        8
+      ],
+      "fragile": false,
+      "action": "move",
+      "weight_lbs": 40.0
+    },
+    {
+      "id": "washer",
+      "current_room": "utility_room",
+      "dimensions_inches": [
+        27,
+        30,
+        39
+      ],
+      "fragile": false,
+      "action": "move",
+      "weight_lbs": 150.0
+    },
+    {
+      "id": "dryer",
+      "current_room": "utility_room",
+      "dimensions_inches": [
+        27,
+        30,
+        39
+      ],
+      "fragile": false,
+      "action": "move",
+      "weight_lbs": 120.0
+    },
+    {
+      "id": "full_mattress",
+      "current_room": "bedroom_3_front",
+      "dimensions_inches": [
+        54,
+        75,
+        10
+      ],
+      "fragile": false,
+      "action": "move",
+      "weight_lbs": 60.0
+    },
+    {
+      "id": "twin_mattress",
+      "current_room": "bedroom_2_middle",
+      "dimensions_inches": [
+        38,
+        75,
+        8
+      ],
+      "fragile": false,
+      "action": "move",
+      "weight_lbs": 40.0
+    },
+    {
+      "id": "twin_bed_frame",
+      "current_room": "bedroom_2_middle",
+      "dimensions_inches": [
+        38,
+        75,
+        8
+      ],
+      "fragile": false,
+      "action": "move",
+      "weight_lbs": 30.0
+    },
+    {
+      "id": "bookshelf_3x3",
+      "current_room": "bedroom_2_middle",
+      "dimensions_inches": [
+        36,
+        12,
+        36
+      ],
+      "fragile": false,
+      "action": "move",
+      "weight_lbs": 30.0
+    },
+    {
+      "id": "bathroom_items",
+      "current_room": "master_bath",
+      "dimensions_inches": [
+        16,
+        12,
+        12
+      ],
+      "fragile": true,
+      "action": "move",
+      "weight_lbs": 15.0
+    },
+    {
+      "id": "deep_freeze",
+      "current_room": "patio_storage",
+      "dimensions_inches": [
+        36,
+        24,
+        34
+      ],
+      "fragile": false,
+      "action": "remove",
+      "weight_lbs": 100.0
+    }
+  ]
+}
