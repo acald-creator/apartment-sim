@@ -1,0 +1,250 @@
+<!-- Procedurally generated MuJoCo scene for Apartment Moving Simulator -->
+<mujoco model="apartment_moving_day">
+    <compiler coordinate="local" angle="degree" type="mesh"/>
+    <option gravity="0 0 -9.81" timestep="0.002"/>
+    <size njmax="500" nconmax="100"/>
+    
+    <asset>
+        <!-- Materials & Textures matching Swiss warm-minimalist color system -->
+        <texture name="grid" type="2d" builtin="checker" rgb1="0.98 0.97 0.95" rgb2="0.95 0.93 0.90" width="300" height="300" mark="edge" markrgb="0.88 0.85 0.82"/>
+        <material name="floor_mat" texture="grid" texrepeat="2 2" texuniform="true"/>
+        <material name="wall_mat" rgba="0.1 0.1 0.1 0.25"/>
+    </asset>
+    
+    <worldbody>
+        <!-- Environment lighting -->
+        <light directional="true" diffuse="0.85 0.85 0.85" specular="0.1 0.1 0.1" pos="0 0 8" dir="0 0 -1"/>
+        <light directional="false" diffuse="0.2 0.2 0.2" pos="0 0 4"/>
+        
+        <!-- Ground floor representing warm paper background -->
+        <geom name="floor" type="plane" size="15 15 .05" material="floor_mat" condim="3"/>
+        <!-- Room: UTILITY_ROOM -->
+        <geom name="floor_utility_room" type="box" pos="7.500 5.000 0.001" size="0.988 1.800 0.001" rgba="0.10 0.10 0.10 0.04" conaffinity="0" contype="0"/>
+        <geom name="wall_utility_room_N" type="box" pos="7.500 6.800 0.500" size="0.988 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_utility_room_S" type="box" pos="7.500 3.200 0.500" size="0.988 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_utility_room_E" type="box" pos="8.488 5.000 0.500" size="0.040 1.800 0.500" material="wall_mat"/>
+        <geom name="wall_utility_room_W" type="box" pos="6.513 5.000 0.500" size="0.040 1.800 0.500" material="wall_mat"/>
+        <!-- Room: KITCHEN -->
+        <geom name="floor_kitchen" type="box" pos="4.250 5.000 0.001" size="2.087 1.887 0.001" rgba="0.10 0.10 0.10 0.04" conaffinity="0" contype="0"/>
+        <geom name="wall_kitchen_N" type="box" pos="4.250 6.888 0.500" size="2.087 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_kitchen_S" type="box" pos="4.250 3.112 0.500" size="2.087 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_kitchen_E" type="box" pos="6.338 5.000 0.500" size="0.040 1.887 0.500" material="wall_mat"/>
+        <geom name="wall_kitchen_W" type="box" pos="2.163 5.000 0.500" size="0.040 1.887 0.500" material="wall_mat"/>
+        <!-- Room: DINING_ROOM -->
+        <geom name="floor_dining_room" type="box" pos="0.225 4.750 0.001" size="1.900 2.125 0.001" rgba="0.10 0.10 0.10 0.04" conaffinity="0" contype="0"/>
+        <geom name="wall_dining_room_N" type="box" pos="0.225 6.875 0.500" size="1.900 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_dining_room_S" type="box" pos="0.225 2.625 0.500" size="1.900 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_dining_room_E" type="box" pos="2.125 4.750 0.500" size="0.040 2.125 0.500" material="wall_mat"/>
+        <geom name="wall_dining_room_W" type="box" pos="-1.675 4.750 0.500" size="0.040 2.125 0.500" material="wall_mat"/>
+        <!-- Room: GUEST_BATH -->
+        <geom name="floor_guest_bath" type="box" pos="-2.750 4.750 0.001" size="1.075 2.125 0.001" rgba="0.10 0.10 0.10 0.04" conaffinity="0" contype="0"/>
+        <geom name="wall_guest_bath_N" type="box" pos="-2.750 6.875 0.500" size="1.075 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_guest_bath_S" type="box" pos="-2.750 2.625 0.500" size="1.075 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_guest_bath_E" type="box" pos="-1.675 4.750 0.500" size="0.040 2.125 0.500" material="wall_mat"/>
+        <geom name="wall_guest_bath_W" type="box" pos="-3.825 4.750 0.500" size="0.040 2.125 0.500" material="wall_mat"/>
+        <!-- Room: BEDROOM_3_FRONT -->
+        <geom name="floor_bedroom_3_front" type="box" pos="-7.250 4.000 0.001" size="2.250 2.875 0.001" rgba="0.10 0.10 0.10 0.04" conaffinity="0" contype="0"/>
+        <geom name="wall_bedroom_3_front_N" type="box" pos="-7.250 6.875 0.500" size="2.250 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_bedroom_3_front_S" type="box" pos="-7.250 1.125 0.500" size="2.250 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_bedroom_3_front_E" type="box" pos="-5.000 4.000 0.500" size="0.040 2.875 0.500" material="wall_mat"/>
+        <geom name="wall_bedroom_3_front_W" type="box" pos="-9.500 4.000 0.500" size="0.040 2.875 0.500" material="wall_mat"/>
+        <!-- Room: MASTER_BATH -->
+        <geom name="floor_master_bath" type="box" pos="4.250 -0.250 0.001" size="1.800 1.550 0.001" rgba="0.10 0.10 0.10 0.04" conaffinity="0" contype="0"/>
+        <geom name="wall_master_bath_N" type="box" pos="4.250 1.300 0.500" size="1.800 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_master_bath_S" type="box" pos="4.250 -1.800 0.500" size="1.800 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_master_bath_E" type="box" pos="6.050 -0.250 0.500" size="0.040 1.550 0.500" material="wall_mat"/>
+        <geom name="wall_master_bath_W" type="box" pos="2.450 -0.250 0.500" size="0.040 1.550 0.500" material="wall_mat"/>
+        <!-- Room: LIVING_ROOM -->
+        <geom name="floor_living_room" type="box" pos="0.000 -1.250 0.001" size="2.188 2.788 0.001" rgba="0.10 0.10 0.10 0.04" conaffinity="0" contype="0"/>
+        <geom name="wall_living_room_N" type="box" pos="0.000 1.538 0.500" size="2.188 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_living_room_S" type="box" pos="0.000 -4.037 0.500" size="2.188 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_living_room_E" type="box" pos="2.188 -1.250 0.500" size="0.040 2.788 0.500" material="wall_mat"/>
+        <geom name="wall_living_room_W" type="box" pos="-2.188 -1.250 0.500" size="0.040 2.788 0.500" material="wall_mat"/>
+        <!-- Room: BEDROOM_2_MIDDLE -->
+        <geom name="floor_bedroom_2_middle" type="box" pos="-4.500 -1.500 0.001" size="2.125 2.625 0.001" rgba="0.10 0.10 0.10 0.04" conaffinity="0" contype="0"/>
+        <geom name="wall_bedroom_2_middle_N" type="box" pos="-4.500 1.125 0.500" size="2.125 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_bedroom_2_middle_S" type="box" pos="-4.500 -4.125 0.500" size="2.125 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_bedroom_2_middle_E" type="box" pos="-2.375 -1.500 0.500" size="0.040 2.625 0.500" material="wall_mat"/>
+        <geom name="wall_bedroom_2_middle_W" type="box" pos="-6.625 -1.500 0.500" size="0.040 2.625 0.500" material="wall_mat"/>
+        <!-- Room: BEDROOM_1_MASTER -->
+        <geom name="floor_bedroom_1_master" type="box" pos="5.000 -4.500 0.001" size="2.888 2.638 0.001" rgba="0.10 0.10 0.10 0.04" conaffinity="0" contype="0"/>
+        <geom name="wall_bedroom_1_master_N" type="box" pos="5.000 -1.862 0.500" size="2.888 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_bedroom_1_master_S" type="box" pos="5.000 -7.138 0.500" size="2.888 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_bedroom_1_master_E" type="box" pos="7.888 -4.500 0.500" size="0.040 2.638 0.500" material="wall_mat"/>
+        <geom name="wall_bedroom_1_master_W" type="box" pos="2.112 -4.500 0.500" size="0.040 2.638 0.500" material="wall_mat"/>
+        <!-- Room: ENTRY -->
+        <geom name="floor_entry" type="box" pos="7.225 2.250 0.001" size="0.750 0.875 0.001" rgba="0.23 0.51 0.96 0.12" conaffinity="0" contype="0"/>
+        <geom name="wall_entry_N" type="box" pos="7.225 3.125 0.500" size="0.750 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_entry_S" type="box" pos="7.225 1.375 0.500" size="0.750 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_entry_E" type="box" pos="7.975 2.250 0.500" size="0.040 0.875 0.500" material="wall_mat"/>
+        <geom name="wall_entry_W" type="box" pos="6.475 2.250 0.500" size="0.040 0.875 0.500" material="wall_mat"/>
+        <!-- Room: PATIO -->
+        <geom name="floor_patio" type="box" pos="-0.750 -5.500 0.001" size="1.625 1.375 0.001" rgba="0.10 0.10 0.10 0.04" conaffinity="0" contype="0"/>
+        <geom name="wall_patio_N" type="box" pos="-0.750 -4.125 0.500" size="1.625 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_patio_S" type="box" pos="-0.750 -6.875 0.500" size="1.625 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_patio_E" type="box" pos="0.875 -5.500 0.500" size="0.040 1.375 0.500" material="wall_mat"/>
+        <geom name="wall_patio_W" type="box" pos="-2.375 -5.500 0.500" size="0.040 1.375 0.500" material="wall_mat"/>
+        <!-- Room: PATIO_STORAGE -->
+        <geom name="floor_patio_storage" type="box" pos="1.500 -5.500 0.001" size="0.625 1.375 0.001" rgba="0.10 0.10 0.10 0.04" conaffinity="0" contype="0"/>
+        <geom name="wall_patio_storage_N" type="box" pos="1.500 -4.125 0.500" size="0.625 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_patio_storage_S" type="box" pos="1.500 -6.875 0.500" size="0.625 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_patio_storage_E" type="box" pos="2.125 -5.500 0.500" size="0.040 1.375 0.500" material="wall_mat"/>
+        <geom name="wall_patio_storage_W" type="box" pos="0.875 -5.500 0.500" size="0.040 1.375 0.500" material="wall_mat"/>
+        <!-- Room: BEDROOM_3_CLOSET -->
+        <geom name="floor_bedroom_3_closet" type="box" pos="-4.749 5.750 0.001" size="0.911 1.188 0.001" rgba="0.96 0.25 0.37 0.12" conaffinity="0" contype="0"/>
+        <geom name="wall_bedroom_3_closet_N" type="box" pos="-4.749 6.938 0.500" size="0.911 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_bedroom_3_closet_S" type="box" pos="-4.749 4.562 0.500" size="0.911 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_bedroom_3_closet_E" type="box" pos="-3.838 5.750 0.500" size="0.040 1.188 0.500" material="wall_mat"/>
+        <geom name="wall_bedroom_3_closet_W" type="box" pos="-5.660 5.750 0.500" size="0.040 1.188 0.500" material="wall_mat"/>
+        <!-- Room: BEDROOM_2_CLOSET -->
+        <geom name="floor_bedroom_2_closet" type="box" pos="-8.000 -0.250 0.001" size="1.438 1.375 0.001" rgba="0.96 0.25 0.37 0.12" conaffinity="0" contype="0"/>
+        <geom name="wall_bedroom_2_closet_N" type="box" pos="-8.000 1.125 0.500" size="1.438 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_bedroom_2_closet_S" type="box" pos="-8.000 -1.625 0.500" size="1.438 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_bedroom_2_closet_E" type="box" pos="-6.562 -0.250 0.500" size="0.040 1.375 0.500" material="wall_mat"/>
+        <geom name="wall_bedroom_2_closet_W" type="box" pos="-9.438 -0.250 0.500" size="0.040 1.375 0.500" material="wall_mat"/>
+        <!-- Room: MASTER_CLOSET -->
+        <geom name="floor_master_closet" type="box" pos="7.000 -0.250 0.001" size="1.000 1.538 0.001" rgba="0.96 0.25 0.37 0.12" conaffinity="0" contype="0"/>
+        <geom name="wall_master_closet_N" type="box" pos="7.000 1.288 0.500" size="1.000 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_master_closet_S" type="box" pos="7.000 -1.788 0.500" size="1.000 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_master_closet_E" type="box" pos="8.000 -0.250 0.500" size="0.040 1.538 0.500" material="wall_mat"/>
+        <geom name="wall_master_closet_W" type="box" pos="6.000 -0.250 0.500" size="0.040 1.538 0.500" material="wall_mat"/>
+        <!-- Room: ENTRY_CLOSET -->
+        <geom name="floor_entry_closet" type="box" pos="6.000 3.500 0.001" size="0.525 0.450 0.001" rgba="0.96 0.25 0.37 0.12" conaffinity="0" contype="0"/>
+        <geom name="wall_entry_closet_N" type="box" pos="6.000 3.950 0.500" size="0.525 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_entry_closet_S" type="box" pos="6.000 3.050 0.500" size="0.525 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_entry_closet_E" type="box" pos="6.525 3.500 0.500" size="0.040 0.450 0.500" material="wall_mat"/>
+        <geom name="wall_entry_closet_W" type="box" pos="5.475 3.500 0.500" size="0.040 0.450 0.500" material="wall_mat"/>
+        <!-- Room: LINEN_CLOSET -->
+        <geom name="floor_linen_closet" type="box" pos="-4.250 3.500 0.001" size="0.525 0.887 0.001" rgba="0.96 0.25 0.37 0.12" conaffinity="0" contype="0"/>
+        <geom name="wall_linen_closet_N" type="box" pos="-4.250 4.388 0.500" size="0.525 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_linen_closet_S" type="box" pos="-4.250 2.612 0.500" size="0.525 0.040 0.500" material="wall_mat"/>
+        <geom name="wall_linen_closet_E" type="box" pos="-3.725 3.500 0.500" size="0.040 0.887 0.500" material="wall_mat"/>
+        <geom name="wall_linen_closet_W" type="box" pos="-4.775 3.500 0.500" size="0.040 0.887 0.500" material="wall_mat"/>
+        
+        <!-- Item: microwave -->
+        <body name="microwave" pos="3.700 4.450 0.162">
+            <joint type="free" name="joint_microwave"/>
+            <geom name="geom_microwave" type="box" size="0.254 0.191 0.152" mass="15.876" rgba="0.48 0.55 0.49 1.0" condim="3"/>
+        </body>
+        <!-- Item: stove -->
+        <body name="stove" pos="4.250 4.450 0.467">
+            <joint type="free" name="joint_stove"/>
+            <geom name="geom_stove" type="box" size="0.381 0.330 0.457" mass="68.039" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: dish_rack -->
+        <body name="dish_rack" pos="4.800 4.450 0.137">
+            <joint type="free" name="joint_dish_rack"/>
+            <geom name="geom_dish_rack" type="box" size="0.191 0.152 0.127" mass="2.268" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: cookware -->
+        <body name="cookware" pos="3.700 5.000 0.213">
+            <joint type="free" name="joint_cookware"/>
+            <geom name="geom_cookware" type="box" size="0.229 0.229 0.203" mass="11.340" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: pantry_items -->
+        <body name="pantry_items" pos="4.250 5.000 0.162">
+            <joint type="free" name="joint_pantry_items"/>
+            <geom name="geom_pantry_items" type="box" size="0.152 0.152 0.152" mass="4.536" rgba="0.78 0.29 0.19 1.0" condim="3"/>
+        </body>
+        <!-- Item: couch -->
+        <body name="couch" pos="-0.550 -1.800 0.467">
+            <joint type="free" name="joint_couch"/>
+            <geom name="geom_couch" type="box" size="1.067 0.457 0.457" mass="54.431" rgba="0.78 0.29 0.19 1.0" condim="3"/>
+        </body>
+        <!-- Item: main_smart_tv_65 -->
+        <body name="main_smart_tv_65" pos="0.000 -1.800 0.442">
+            <joint type="free" name="joint_main_smart_tv_65"/>
+            <geom name="geom_main_smart_tv_65" type="box" size="0.737 0.051 0.432" mass="22.680" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: second_smart_tv_55 -->
+        <body name="second_smart_tv_55" pos="0.550 -1.800 0.378">
+            <joint type="free" name="joint_second_smart_tv_55"/>
+            <geom name="geom_second_smart_tv_55" type="box" size="0.622 0.051 0.368" mass="18.144" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: secondary_tv_stand -->
+        <body name="secondary_tv_stand" pos="-0.550 -1.250 0.264">
+            <joint type="free" name="joint_secondary_tv_stand"/>
+            <geom name="geom_secondary_tv_stand" type="box" size="0.610 0.229 0.254" mass="27.216" rgba="0.78 0.29 0.19 1.0" condim="3"/>
+        </body>
+        <!-- Item: glass_computer_desk_lr -->
+        <body name="glass_computer_desk_lr" pos="0.000 -1.250 0.391">
+            <joint type="free" name="joint_glass_computer_desk_lr"/>
+            <geom name="geom_glass_computer_desk_lr" type="box" size="0.610 0.305 0.381" mass="22.680" rgba="0.78 0.29 0.19 1.0" condim="3"/>
+        </body>
+        <!-- Item: futon_couch -->
+        <body name="futon_couch" pos="0.550 -1.250 0.416">
+            <joint type="free" name="joint_futon_couch"/>
+            <geom name="geom_futon_couch" type="box" size="0.889 0.457 0.406" mass="36.287" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: mattress_queen -->
+        <body name="mattress_queen" pos="4.450 -5.050 0.137">
+            <joint type="free" name="joint_mattress_queen"/>
+            <geom name="geom_mattress_queen" type="box" size="0.762 1.016 0.127" mass="36.287" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: glass_computer_desk_master -->
+        <body name="glass_computer_desk_master" pos="5.000 -5.050 0.391">
+            <joint type="free" name="joint_glass_computer_desk_master"/>
+            <geom name="geom_glass_computer_desk_master" type="box" size="0.508 0.305 0.381" mass="18.144" rgba="0.78 0.29 0.19 1.0" condim="3"/>
+        </body>
+        <!-- Item: lg_monitor -->
+        <body name="lg_monitor" pos="5.550 -5.050 0.239">
+            <joint type="free" name="joint_lg_monitor"/>
+            <geom name="geom_lg_monitor" type="box" size="0.305 0.102 0.229" mass="5.443" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: desktop_heavy -->
+        <body name="desktop_heavy" pos="4.450 -4.500 0.289">
+            <joint type="free" name="joint_desktop_heavy"/>
+            <geom name="geom_desktop_heavy" type="box" size="0.279 0.127 0.279" mass="13.608" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: desktop_medium -->
+        <body name="desktop_medium" pos="5.000 -4.500 0.239">
+            <joint type="free" name="joint_desktop_medium"/>
+            <geom name="geom_desktop_medium" type="box" size="0.229 0.102 0.229" mass="9.072" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: metal_bed_frame_queen -->
+        <body name="metal_bed_frame_queen" pos="5.550 -4.500 0.112">
+            <joint type="free" name="joint_metal_bed_frame_queen"/>
+            <geom name="geom_metal_bed_frame_queen" type="box" size="0.762 1.016 0.102" mass="18.144" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: washer -->
+        <body name="washer" pos="6.950 4.450 0.505">
+            <joint type="free" name="joint_washer"/>
+            <geom name="geom_washer" type="box" size="0.343 0.381 0.495" mass="68.039" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: dryer -->
+        <body name="dryer" pos="7.500 4.450 0.505">
+            <joint type="free" name="joint_dryer"/>
+            <geom name="geom_dryer" type="box" size="0.343 0.381 0.495" mass="54.431" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: full_mattress -->
+        <body name="full_mattress" pos="-7.800 3.450 0.137">
+            <joint type="free" name="joint_full_mattress"/>
+            <geom name="geom_full_mattress" type="box" size="0.686 0.953 0.127" mass="27.216" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: twin_mattress -->
+        <body name="twin_mattress" pos="-5.050 -2.050 0.112">
+            <joint type="free" name="joint_twin_mattress"/>
+            <geom name="geom_twin_mattress" type="box" size="0.483 0.953 0.102" mass="18.144" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: twin_bed_frame -->
+        <body name="twin_bed_frame" pos="-4.500 -2.050 0.112">
+            <joint type="free" name="joint_twin_bed_frame"/>
+            <geom name="geom_twin_bed_frame" type="box" size="0.483 0.953 0.102" mass="13.608" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: bookshelf_3x3 -->
+        <body name="bookshelf_3x3" pos="-3.950 -2.050 0.467">
+            <joint type="free" name="joint_bookshelf_3x3"/>
+            <geom name="geom_bookshelf_3x3" type="box" size="0.457 0.152 0.457" mass="13.608" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: bathroom_items -->
+        <body name="bathroom_items" pos="3.700 -0.800 0.162">
+            <joint type="free" name="joint_bathroom_items"/>
+            <geom name="geom_bathroom_items" type="box" size="0.203 0.152 0.152" mass="6.804" rgba="0.82 0.57 0.24 1.0" condim="3"/>
+        </body>
+        <!-- Item: deep_freeze -->
+        <body name="deep_freeze" pos="0.950 -6.050 0.442">
+            <joint type="free" name="joint_deep_freeze"/>
+            <geom name="geom_deep_freeze" type="box" size="0.457 0.305 0.432" mass="45.359" rgba="0.78 0.29 0.19 1.0" condim="3"/>
+        </body>
+    </worldbody>
+</mujoco>
