@@ -25,6 +25,32 @@ A Python-based simulation utility that parses an apartment layout, schedules an 
 - Python 3.x
 - `Pillow` (Only needed if generating the coordinate map image; CLI simulation itself uses pure Python standard libraries).
 
+## Quick Setup (Lucky Robots Runner)
+
+If you want to run `run_lucky_robots.py`, bootstrap the environment with:
+
+```bash
+make setup
+make run
+```
+
+This installs:
+- `numpy`
+- `luckyrobots`
+- `Pillow`
+
+Equivalent manual commands:
+
+```bash
+./setup.sh
+source .venv/bin/activate
+python run_lucky_robots.py --skip-launch
+```
+
+`make run` now defaults to attach mode (`--skip-launch`), which is ideal when `RobotSandbox` is already open.
+Use `make run-launch` if you want Python to attempt launching LuckyEditor.
+Use `make run-smoke` for a known-good MuJoCo sanity test (`unitreego2 + velocity + locomotion`) before running custom XML scenes.
+
 ## Usage
 
 To run the complete chronological moving day simulation:

@@ -2,3 +2,8 @@
 __pycache__/
 *.pyc
 .DS_Store
+.venv/
+logs/
+Config/
+*.log
+cli_args.txt
