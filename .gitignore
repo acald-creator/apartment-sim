@@ -1,9 +1,25 @@
+# Python/local runtime
 .antigravitycli/
 __pycache__/
 *.pyc
-.DS_Store
 .venv/
 logs/
 Config/
 *.log
 cli_args.txt
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Node/Vite/TS
+node_modules/
+dist/
+*.tsbuildinfo
+
+# npm/yarn/pnpm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
