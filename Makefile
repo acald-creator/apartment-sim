@@ -25,7 +25,7 @@ run-attach:
 	source .venv/bin/activate && python run_lucky_robots.py --skip-launch
 
 probe-grpc:
-	source .venv/bin/activate && python grpc_probe.py
+	source .venv/bin/activate && python scripts/grpc_probe.py
 
 scene-from-image:
-	source .venv/bin/activate && python generate_scene_from_floorplan.py
+	source .venv/bin/activate && python scripts/generate_scene_from_floorplan.py

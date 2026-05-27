@@ -50,7 +50,7 @@ def main() -> None:
     scene_path = args.scene
     if scene_path.endswith(".xml") and not os.path.isabs(scene_path):
         if not os.path.exists(scene_path):
-            print(f"Error: {scene_path} not found. Run ./compile_3d_scene.py first.")
+            print(f"Error: {scene_path} not found. Run ./scripts/compile_3d_scene.py first.")
             sys.exit(1)
         scene_path = os.path.abspath(scene_path)
 
